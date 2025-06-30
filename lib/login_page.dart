@@ -23,35 +23,35 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 24.0, bottom: 16.0),
-              child: Center(
-                child: Text(
-                  'TransOrder',
-                  style: GoogleFonts.montserrat(
-                    color: Colors.blue,
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    letterSpacing: 2,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 24.0, bottom: 16.0),
+                child: Center(
+                  child: Text(
+                    'TransOrder',
+                    style: GoogleFonts.montserrat(
+                      color: Colors.blue,
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: Image.asset(
-                'assets/truck.png',
-                height: 100,
-                fit: BoxFit.contain,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Image.asset(
+                  'assets/truck.png',
+                  height: 100,
+                  fit: BoxFit.contain,
+                ),
               ),
-            ),
-            const SizedBox(height: 16),
-            Expanded(
-              child: Center(
+              const SizedBox(height: 16),
+              Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(24.0),
+                  padding: const EdgeInsets.all(20.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -87,8 +87,8 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -182,16 +182,32 @@ class _RegisterDialogState extends State<RegisterDialog> {
         ),
       ),
       actions: [
-        TextButton(
-          onPressed: () => Navigator.of(context).pop(),
-          child: const Text('Скасувати'),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            // TODO: Реалізувати логіку реєстрації
-            Navigator.of(context).pop();
-          },
-          child: const Text('Зареєструватися'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text(
+                'Скасувати',
+                style: TextStyle(fontSize: 10),
+              ),
+            ),
+            const SizedBox(width: 12),
+            SizedBox(
+              height: 36,
+              width: 160,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                ),
+                onPressed: () {
+                  // TODO: Реалізувати логіку реєстрації
+                  Navigator.of(context).pop();
+                },
+                child: const Text('Зареєструватися', style: TextStyle(fontSize: 14)),
+              ),
+            ),
+          ],
         ),
       ],
     );
