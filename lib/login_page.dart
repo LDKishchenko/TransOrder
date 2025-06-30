@@ -72,16 +72,35 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       const SizedBox(height: 24),
-                      GestureDetector(
-                        onTap: _showRegisterDialog,
-                        child: const Text(
-                          'Зареєструватися',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 36,
+                            width: 120,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(horizontal: 8),
+                              ),
+                              onPressed: () {
+                                // TODO: Реалізувати логіку входу
+                              },
+                              child: const Text('Увійти', style: TextStyle(fontSize: 14)),
+                            ),
                           ),
-                        ),
+                          const SizedBox(width: 16),
+                          GestureDetector(
+                            onTap: _showRegisterDialog,
+                            child: const Text(
+                              'Зареєструватися',
+                              style: TextStyle(
+                                color: Colors.blue,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
